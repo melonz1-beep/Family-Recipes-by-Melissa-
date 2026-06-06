@@ -8,8 +8,7 @@ window.addEventListener("load", () => {
   }, 2200);
 });
 
-/*
-  const firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyCSVjnXaDyOQnqNx6HXjwYNqrJu96v8V_U",
   authDomain: "family-recipes-by-melissa.firebaseapp.com",
   databaseURL: "https://family-recipes-by-melissa-default-rtdb.firebaseio.com",
@@ -19,16 +18,8 @@ window.addEventListener("load", () => {
   appId: "1:644873856163:web:1b184c62882c7ae0ff8b16",
   measurementId: "G-CJZ66HXCZN"
 };
+  
 
-const firebaseConfig = {
-  apiKey: "PASTE-YOUR-API-KEY-HERE",
-  authDomain: "PASTE-YOUR-PROJECT-ID.firebaseapp.com",
-  databaseURL: "https://PASTE-YOUR-PROJECT-ID-default-rtdb.firebaseio.com",
-  projectId: "PASTE-YOUR-PROJECT-ID",
-  storageBucket: "PASTE-YOUR-PROJECT-ID.appspot.com",
-  messagingSenderId: "PASTE-SENDER-ID",
-  appId: "PASTE-APP-ID"
-};
 
 const starterRecipes = [
   {
