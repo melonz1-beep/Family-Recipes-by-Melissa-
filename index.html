@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Melissa's Recipe Binder</title>
+  <meta name="theme-color" content="#7b668c">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="splash">
+  <div class="splash-content">
+    <img src="splash-logo.png" class="splash-logo" alt="Melissa's Recipe Binder">
+    <h1>Melissa's Recipe Binder</h1>
+    <p>Lavender & Sunflower Farmhouse Collection</p>
+    <div class="loader"></div>
+  </div>
+</div>
+
+<header>
+  <div class="floral">🌻 💜 🌿</div>
+  <h1>Melissa's Recipe Binder</h1>
+  <p>Lavender & Sunflower Farmhouse Recipe Collection</p>
+  <div id="status">Connecting to Firebase...</div>
+</header>
+
+<nav>
+  <button data-tab="recipes" class="active">Recipes</button>
+  <button data-tab="mealplan">Meal Plan</button>
+  <button data-tab="freezer">Freezer</button>
+  <button data-tab="shopping">Shopping</button>
+  <button data-tab="holidays">Holidays</button>
+  <button data-tab="notes">Notes</button>
+</nav>
+
+<main>
+  <section id="recipes" class="tab active">
+    <div class="section-title">
+      <h2>Recipe Box</h2>
+      <button id="addRecipeBtn">+ Add Recipe</button>
+    </div>
+
+    <label>Search Recipes</label>
+    <input id="searchBox" placeholder="Search by recipe name, ingredient, or notes...">
+
+    <label>Filter by Category</label>
+    <select id="categoryFilter">
+      <option value="All">All Recipes</option>
+      <option>Breakfast</option>
+      <option>Lunch</option>
+      <option>Dinner</option>
+      <option>Desserts</option>
+      <option>Appetizers</option>
+      <option>Side Dishes</option>
+      <option>Soups & Stews</option>
+      <option>Crockpot / Slow Cooker</option>
+      <option>Instant Pot</option>
+      <option>Freezer Meals</option>
+      <option>Holiday Recipes</option>
+      <option>Family Favorites</option>
+      <option>Other</option>
+    </select>
+
+    <div id="recipeList"></div>
+  </section>
+
+  <section id="mealplan" class="tab">
+    <h2>Weekly / Monthly Meal Plan</h2>
+    <textarea id="mealPlan" placeholder="Plan meals for the week, month, holidays, or family gatherings..."></textarea>
+  </section>
+
+  <section id="freezer" class="tab">
+    <h2>Freezer Inventory</h2>
+    <div class="row">
+      <input id="freezerItem" placeholder="Recipe or item">
+      <input id="freezerDate" type="date">
+      <button id="addFreezerBtn">Add</button>
+    </div>
+    <ul id="freezerList"></ul>
+  </section>
+
+  <section id="shopping" class="tab">
+    <h2>Shopping List</h2>
+    <div class="row">
+      <input id="shoppingItem" placeholder="Add grocery item">
+      <button id="addShoppingBtn">Add</button>
+    </div>
+    <ul id="shoppingList"></ul>
+  </section>
+
+  <section id="holidays" class="tab">
+    <h2>Holiday & Gathering Menus</h2>
+    <label>Christmas</label>
+    <textarea id="christmas"></textarea>
+    <label>Easter</label>
+    <textarea id="easter"></textarea>
+    <label>Mother's Day</label>
+    <textarea id="mothersDay"></textarea>
+    <label>Thanksgiving</label>
+    <textarea id="thanksgiving"></textarea>
+    <label>Birthdays / Family Gatherings</label>
+    <textarea id="gatherings"></textarea>
+  </section>
+
+  <section id="notes" class="tab">
+    <h2>Family Notes & Favorites</h2>
+    <textarea id="familyNotes" placeholder="Add family favorites, recipe changes, ratings, memories, or notes..."></textarea>
+    <button id="exportBtn">Export Backup</button>
+    <button id="resetBtn" class="danger">Reset Recipe Binder to Starter Recipes</button>
+  </section>
+</main>
+
+<footer>🌻 Firebase sync enabled 💜</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
