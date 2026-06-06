@@ -9,11 +9,16 @@ window.addEventListener("load", () => {
 });
 
 /*
-  Replace this placeholder firebaseConfig with your Firebase web app config.
-
-  Firebase Console:
-  Project settings > General > Your apps > Web app > SDK setup and configuration > Config
-*/
+  const firebaseConfig = {
+  apiKey: "AIzaSyCSVjnXaDyOQnqNx6HXjwYNqrJu96v8V_U",
+  authDomain: "family-recipes-by-melissa.firebaseapp.com",
+  databaseURL: "https://family-recipes-by-melissa-default-rtdb.firebaseio.com",
+  projectId: "family-recipes-by-melissa",
+  storageBucket: "family-recipes-by-melissa.firebasestorage.app",
+  messagingSenderId: "644873856163",
+  appId: "1:644873856163:web:1b184c62882c7ae0ff8b16",
+  measurementId: "G-CJZ66HXCZN"
+};
 
 const firebaseConfig = {
   apiKey: "PASTE-YOUR-API-KEY-HERE",
