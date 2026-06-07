@@ -1,0 +1,1 @@
+Upload all files to GitHub Pages. This version includes Add Recipe, Import Recipe, and Scan Recipe. Firebase config is already included.

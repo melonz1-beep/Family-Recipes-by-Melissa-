@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Melissa's Recipe Binder</title>
+<meta name="theme-color" content="#7b668c">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="splash"><div class="splash-content"><img src="splash-logo.png" class="splash-logo"><h1>Melissa's Recipe Binder</h1><p>Lavender & Sunflower Farmhouse Collection</p><div class="loader"></div></div></div>
+<header><div class="floral">🌻 💜 🌿</div><h1>Melissa's Recipe Binder</h1><p>Lavender & Sunflower Farmhouse Recipe Collection</p><div id="status">Connecting to Firebase...</div></header>
+<nav>
+<button data-tab="recipes" class="active">Recipes</button><button data-tab="mealplan">Meal Plan</button><button data-tab="freezer">Freezer</button><button data-tab="shopping">Shopping</button><button data-tab="holidays">Holidays</button><button data-tab="notes">Notes</button>
+</nav>
+<main>
+<section id="recipes" class="tab active">
+<div class="section-title"><h2>Recipe Box</h2><div class="toolbar"><button id="addRecipeBtn">+ Add Recipe</button><button id="openImportBtn">Import Recipe</button><button id="openScanBtn">Scan Recipe</button></div></div>
+<div id="importPanel" class="panel hidden"><h3>Import Recipe by Copy & Paste</h3><p class="small">Paste a recipe from a website, note, or cookbook text. The app will try to split title, ingredients, and directions.</p><label>Paste Recipe Text</label><textarea id="importText"></textarea><label>Category</label><select id="importCategory"></select><div class="actions"><button id="importRecipeBtn">Import to Recipe Box</button><button id="closeImportBtn">Close</button></div></div>
+<div id="scanPanel" class="panel hidden"><h3>Scan / Save a Recipe Photo</h3><p class="small">This saves a photo of a recipe card or cookbook page with a recipe entry.</p><label>Recipe Name</label><input id="scanTitle"><label>Category</label><select id="scanCategory"></select><label>Choose Recipe Photo</label><input id="scanPhoto" type="file" accept="image/*"><label>Notes</label><textarea id="scanNotes"></textarea><div class="actions"><button id="saveScanBtn">Save Photo Recipe</button><button id="closeScanBtn">Close</button></div></div>
+<label>Search Recipes</label><input id="searchBox" placeholder="Search by recipe name, ingredient, or notes...">
+<label>Filter by Category</label><select id="categoryFilter"><option value="All">All Recipes</option></select>
+<div id="recipeList"></div>
+</section>
+<section id="mealplan" class="tab"><h2>Weekly / Monthly Meal Plan</h2><textarea id="mealPlan"></textarea></section>
+<section id="freezer" class="tab"><h2>Freezer Inventory</h2><div class="row"><input id="freezerItem" placeholder="Recipe or item"><input id="freezerDate" type="date"><button id="addFreezerBtn">Add</button></div><ul id="freezerList"></ul></section>
+<section id="shopping" class="tab"><h2>Shopping List</h2><div class="row"><input id="shoppingItem" placeholder="Add grocery item"><button id="addShoppingBtn">Add</button></div><ul id="shoppingList"></ul></section>
+<section id="holidays" class="tab"><h2>Holiday & Gathering Menus</h2><label>Christmas</label><textarea id="christmas"></textarea><label>Easter</label><textarea id="easter"></textarea><label>Mother's Day</label><textarea id="mothersDay"></textarea><label>Thanksgiving</label><textarea id="thanksgiving"></textarea><label>Birthdays / Family Gatherings</label><textarea id="gatherings"></textarea></section>
+<section id="notes" class="tab"><h2>Family Notes & Favorites</h2><textarea id="familyNotes"></textarea><button id="exportBtn">Export Backup</button><button id="resetBtn" class="danger">Reset Recipe Binder</button></section>
+</main>
+<footer>🌻 Firebase sync enabled 💜</footer>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database-compat.js"></script>
+<script src="app.js"></script>
+</body></html>
