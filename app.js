@@ -7,7 +7,7 @@ const starterRecipes=[{category:"Breakfast",title:"Hash Brown Crust Breakfast Ca
 const defaultState={recipes:starterRecipes,mealPlan:"",freezer:[],shopping:[],christmas:"Breakfast casserole\nDinner menu\nDesserts\nShopping list",easter:"Brunch menu\nDinner menu\nDesserts",mothersDay:"Brunch ideas\nFamily favorites",thanksgiving:"Turkey day sides\nBreakfast for the weekend\nDesserts",gatherings:"Birthdays, cookouts, family dinners, and potlucks",familyNotes:""};
 const $=id=>document.getElementById(id);let state=structuredClone(defaultState),loaded=false,saveTimer=null;
 function saveNow(){if(!loaded)return;clearTimeout(saveTimer);saveTimer=setTimeout(()=>{dataRef.set(state);$("status").textContent="Saved online"}
-function setupCats(){let opts='<option value="All">All Recipes</option>'+categories.map(c=>`<option>${c}</option>`).join("");$("categoryFilter").innerHTML=opts;$("importCategory").innerHTML=categories.map(c=>`<option ${c==="Dinner"?"selected":""}>${c}</option>`).join("");$("scanCategory").innerHTML=categories.map(c=>`<option ${c==="Family Favorites"?"selected":""}>${c}</option>`).join("")}}
+function setupCats(){let opts='<option value="All">All Recipes</option>'+categories.map(c=>`<option>${c}</option>`).join("");$("categoryFilter").innerHTML=opts;$("importCategory").innerHTML=categories.map(c=>`<option ${c==="Dinner"?"selected":""}>${c}</option>`).join("");$("scanCategory").innerHTML=categories.map(c=>`<option ${c==="Family Favorites"?"selected":""}>${c}</option>`).join("")}
 window.addEventListener("DOMContentLoaded", () => {
   setupCats();
 });
