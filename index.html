@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#7b668c">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="style.css?v=20260804-2">
+<link rel="stylesheet" href="style.css?v=20260804-3">
 </head>
 <body>
 <div id="splash"><div class="splash-content"><img src="splash-logo.png" class="splash-logo" alt="Melissa's Recipe Binder"><h1>Melissa's Recipe Binder</h1><p>Lavender & Sunflower Farmhouse Collection</p><div class="loader"></div></div></div>
@@ -17,9 +17,10 @@
 </nav>
 <main>
 <section id="recipes" class="tab active">
-<div class="section-title"><h2>Recipe Box</h2><div class="toolbar"><button id="addRecipeBtn">+ Add Recipe</button><button id="openImportBtn">Paste Recipe</button><button id="openPhotoImportBtn">Import from Photo</button></div></div>
+<div class="section-title"><h2>Recipe Box</h2><div class="toolbar"><button id="addRecipeBtn">+ Add Recipe</button><button id="openImportBtn">Paste Recipe</button><button id="openPhotoImportBtn">Import from Photo</button><button id="openDocumentImportBtn">Import Document</button></div></div>
 <div id="importPanel" class="panel hidden"><h3>Import Recipe by Copy & Paste</h3><p class="small">Paste recipe text below. You can review and edit it before saving.</p><label for="importText">Recipe Text</label><textarea id="importText" placeholder="Paste the recipe title, ingredients, and directions..."></textarea><label for="importCategory">Category</label><select id="importCategory"></select><div class="actions"><button id="importRecipeBtn">Review Recipe</button><button id="closeImportBtn" class="secondary">Close</button></div></div>
 <div id="photoImportPanel" class="panel hidden"><h3>Import Recipe from a Photo</h3><p class="small">Choose a clear photo. The app reads and imports the title, ingredients, and directions. The picture itself is not saved.</p><label for="photoImportFile">Recipe Photo</label><input id="photoImportFile" type="file" accept="image/*" capture="environment"><label for="photoImportCategory">Category</label><select id="photoImportCategory"></select><div id="ocrStatus" class="progress-note">Ready to read a photo.</div><div class="actions"><button id="extractPhotoBtn">Read Recipe from Photo</button><button id="closePhotoImportBtn" class="secondary">Close</button></div></div>
+<div id="documentImportPanel" class="panel hidden"><h3>Import Recipe from a Document</h3><p class="small">Choose a PDF, Word document, text file, or Markdown file. The binder extracts the recipe name, ingredients, directions, and notes. The original document is not saved.</p><label for="documentImportFile">Recipe Document</label><input id="documentImportFile" type="file" accept=".pdf,.docx,.txt,.md,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain,text/markdown"><label for="documentImportCategory">Category</label><select id="documentImportCategory"></select><div id="documentImportStatus" class="progress-note">Ready to read a document.</div><div class="actions"><button id="extractDocumentBtn">Extract Recipe</button><button id="closeDocumentImportBtn" class="secondary">Close</button></div></div>
 <div class="search-panel"><label for="searchBox">Search Recipes</label><div class="search-row"><input id="searchBox" placeholder="Type part of a recipe name or an ingredient..."><button id="clearSearchBtn" class="secondary hidden">Clear</button></div><p class="small">Examples: “kiel”, “chicken”, “broc”, or “honey”.</p></div>
 <div id="categoryHome"><h3>Choose a Category</h3><div id="categoryGrid" class="category-grid"></div></div>
 <div id="recipeBrowser" class="hidden"><div class="browser-heading"><button id="backToCategoriesBtn" class="secondary">← Categories</button><h3 id="recipeListHeading"></h3></div><div id="recipeList" class="recipe-list"></div></div>
@@ -36,8 +37,11 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database-compat.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="recipes-data.js?v=20260804-2"></script>
-<script src="app.js?v=20260804-2"></script>
-<script src="recipe-library-sync.js?v=20260804-2"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
+<script src="recipes-data.js?v=20260804-3"></script>
+<script src="app.js?v=20260804-3"></script>
+<script src="recipe-library-sync.js?v=20260804-3"></script>
+<script src="document-import.js?v=20260804-3"></script>
 </body>
 </html>
